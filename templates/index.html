@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-lg">
+        <h2 class="text-2xl font-bold text-center mb-6 text-gray-700">Invoice Generator</h2>
+
+        <form action="/" method="POST" class="space-y-4">
+            
+            <!-- Invoice Type -->
+            <div>
+                <label class="block font-semibold text-gray-600">Invoice Type:</label>
+                <div class="flex gap-4 mt-2">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="invoice_type" value="invoice" checked class="mr-2">
+                        Invoice
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="invoice_type" value="proforma_invoice" class="mr-2">
+                        Proforma Invoice
+                    </label>
+                </div>
+            </div>
+
+            <!-- Invoice No -->
+            <div>
+                <label class="block font-semibold text-gray-600">Invoice No:</label>
+                <input type="text" name="invoice_no" required class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <!-- Dates -->
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block font-semibold text-gray-600">Invoice Date:</label>
+                    <input type="date" name="invoice_date" required class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400">
+                </div>
+                <div>
+                    <label class="block font-semibold text-gray-600">Due Date:</label>
+                    <input type="date" name="due_date" required class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400">
+                </div>
+            </div>
+
+            <!-- Seller Info -->
+            <div>
+                <label class="block font-semibold text-gray-600">Seller Legal Name:</label>
+                <input type="text" name="name" required class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <div>
+                <label class="block font-semibold text-gray-600">Store Name:</label>
+                <input type="text" name="store_name" required class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <div>
+                <label class="block font-semibold text-gray-600">GST Address:</label>
+                <input type="text" name="address" required class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <div>
+                <label class="block font-semibold text-gray-600">Phone:</label>
+                <input type="text" name="phone" required class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <div>
+                <label class="block font-semibold text-gray-600">Email:</label>
+                <input type="email" name="email" required class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <!-- Service Details -->
+            <div>
+                <label class="block font-semibold text-gray-600">Service:</label>
+                <input type="text" name="service" required class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <div class="grid grid-cols-3 gap-4">
+                <div>
+                    <label class="block font-semibold text-gray-600">Service Cost:</label>
+                    <input type="text" name="cost" required class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400">
+                </div>
+                <div>
+                    <label class="block font-semibold text-gray-600">GST Cost:</label>
+                    <input type="text" name="gst" required class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400">
+                </div>
+                <div>
+                    <label class="block font-semibold text-gray-600">Total Cost:</label>
+                    <input type="text" name="total" required class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <input type="submit" value="Generate Invoice" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg cursor-pointer transition">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
